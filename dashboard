@@ -1,0 +1,16 @@
+Add to application.yml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: GET,POST
+        allowed-headers: "*"
+          
+After restart your dashboard will successfully fetch:
+http://localhost:8080/actuator/metrics/http.server.requests
+http://localhost:8080/actuator/metrics/system.cpu.usage
+http://localhost:8080/actuator/metrics/resilience4j.circuitbreaker.calls
+
